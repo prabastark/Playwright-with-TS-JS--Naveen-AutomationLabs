@@ -1,18 +1,17 @@
 /*
 ====================================================
-JAVASCRIPT CONDITIONALS — COMPLETE GUIDE
+CONDITIONALS IN JAVASCRIPT — BEGINNER GUIDE
 ====================================================
 
-This file explains the main conditional structures in JavaScript.
-Use these statements to make decisions in your code.
-Run with: node conditions.js
+Conditionals let your code make choices.
+Think of them like asking questions and choosing what to do next.
 */
 
 console.log("\n========== CONDITIONAL STATEMENTS ==========");
 
 /*
 1. if statement
-Use if when you need to run code only when a condition is true.
+Use if when you want to run code only when a condition is true.
 */
 console.log("\n1. if statement");
 const temperature = 30;
@@ -28,7 +27,7 @@ Explanation:
 
 /*
 2. if...else statement
-Use if...else when you need one path for true and another for false.
+Use if...else when you need one path for true and another path for false.
 */
 console.log("\n2. if...else statement");
 const score = 75;
@@ -40,8 +39,8 @@ if (score >= 60) {
 
 /*
 Explanation:
-- if part handles the true case
-- else part handles the false case
+- if part runs when the condition is true
+- else part runs when the condition is false
 */
 
 /*
@@ -64,12 +63,12 @@ if (grade >= 90) {
 Explanation:
 - The first true condition runs its block
 - later conditions are skipped after one matches
-- else is optional and runs if none match
+- else runs if none of the earlier tests are true
 */
 
 /*
 4. nested if statements
-Use nesting when a decision depends on a previous decision.
+Use nesting when one decision depends on another decision.
 */
 console.log("\n4. nested if statements");
 const hasID = true;
@@ -87,13 +86,13 @@ if (hasID) {
 
 /*
 Explanation:
-- one if statement exists inside another
-- inner condition only checks if the outer condition was true
+- A nested if is an if statement inside another if
+- The inner if only runs when the outer condition is true
 */
 
 /*
 5. switch statement
-Use switch when you have a single value to compare against many options.
+Use switch when one value should match many cases.
 */
 console.log("\n5. switch statement");
 const day = "Wednesday";
@@ -113,16 +112,20 @@ switch (day) {
 
 /*
 Explanation:
-- switch(value) compares value to each case
-- break stops execution after a matching case
+- switch(value) compares the value to each case
+- break stops the switch after a match
 - default runs when no case matches
 */
 
 console.log("\n6. conditional summary");
 console.log("if: run code when a condition is true");
-console.log("if...else: choose between two paths");
-console.log("if...else if...else: choose among many paths");
-console.log("nested if: decision inside another decision");
-console.log("switch: compare one value to multiple cases");
+console.log("if...else: choose between true and false");
+console.log("else if: check another condition if the first was false");
+console.log("switch: compare one value to many options");
 
-console.log("\nPractice idea: change the values and add new conditions.");
+console.log("\n7. common interview questions");
+console.log("Q: When should you use switch instead of if/else?");
+console.log("A: Use switch when one value needs many exact matches, like days of the week.");
+console.log("Q: What is nested if?");
+console.log("A: It is an if statement inside another if statement.");
+

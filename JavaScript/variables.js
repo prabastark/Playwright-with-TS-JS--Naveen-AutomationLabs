@@ -18,8 +18,8 @@ Why variables are helpful:
 - Let code change when data changes
 */
 
-console.log("\n========== VARIABLE RULES ==========");
-console.log("myName:", myName);
+console.log("\n========== VARIABLE RULES =========="); // Prints section header for clarity
+console.log("myName:", myName); // Output: myName: Praba
 
 /*
 ====================================================
@@ -31,7 +31,7 @@ Use `let` when the value may change later.
 Avoid `var` because it is confusing for beginners.
 */
 
-console.log("\n========== VAR vs LET vs CONST ==========");
+console.log("\n========== VAR vs LET vs CONST =========="); // Section header
 
 /*
 1. var - old style, avoid in modern code
@@ -40,7 +40,7 @@ function showVar() {
   if (true) {
     var oldStyle = "This is var";
   }
-  console.log("var inside function:", oldStyle); // works because var ignores block scope
+  console.log("var inside function:", oldStyle); // Output: var inside function: This is var (var ignores block scope, works outside if block)
 }
 showVar();
 
@@ -48,7 +48,7 @@ showVar();
 var oldValue = "Hello";
 oldValue = "World"; // re-assign is allowed
 var oldValue = "New value"; // re-declare is allowed (bad practice)
-console.log("var value:", oldValue);
+console.log("var value:", oldValue); // Output: var value: New value (var can be re-declared and re-assigned)
 
 /*
 2. let - best when value changes
@@ -56,7 +56,7 @@ console.log("var value:", oldValue);
 function showLet() {
   if (true) {
     let blockValue = "This is let";
-    console.log("let inside block:", blockValue);
+    console.log("let inside block:", blockValue); // Output: let inside block: This is let (let respects block scope)
   }
   // console.log(blockValue); // ❌ error: blockValue is not defined outside the block
 }
@@ -64,13 +64,13 @@ showLet();
 
 let count = 10;
 count = 11; // re-assign is allowed
-console.log("let count:", count);
+console.log("let count:", count); // Output: let count: 11 (let allows re-assignment)
 
 /*
 3. const - best for values that do not change
 */
 const city = "Chennai";
-console.log("const city:", city);
+console.log("const city:", city); // Output: const city: Chennai (const cannot be changed after assignment)
 // city = "Bangalore"; // ❌ error: cannot change a const value
 
 /*
@@ -78,22 +78,22 @@ console.log("const city:", city);
 SCOPE MADE SIMPLE
 ====================================================
 */
-console.log("\n========== SCOPE BASICS ==========");
+console.log("\n========== SCOPE BASICS =========="); // Prints section header
 
 var globalVar = "I am global"; // available everywhere in this file
 
 function scopeExample() {
   let functionVar = "I am inside the function";
-  console.log(functionVar);
+  console.log(functionVar); // Output: I am inside the function (visible within function scope)
 
   if (true) {
     let blockVar = "I am inside the block";
-    console.log(blockVar);
+    console.log(blockVar); // Output: I am inside the block (visible within block scope)
   }
   // console.log(blockVar); // ❌ error: blockVar only exists inside the if block
 }
 scopeExample();
-console.log("globalVar:", globalVar);
+console.log("globalVar:", globalVar); // Output: globalVar: I am global (global variables accessible anywhere in file)
 
 /*
 ====================================================
@@ -106,10 +106,10 @@ BEGINNER TIPS
 */
 
 console.log("\n========== INTERVIEW READY NOTES ==========");
-console.log("What is the difference between var, let, and const?");
-console.log("Answer: var is function-scoped and old; let is block-scoped and can change; const is block-scoped and cannot change the value.");
-console.log("What is scope?");
-console.log("Answer: Scope is where a variable can be used: global, function, or block.");
+console.log("What is the difference between var, let, and const?"); // Output: What is the difference between var, let, and const? (interview question)
+console.log("Answer: var is function-scoped and old; let is block-scoped and can change; const is block-scoped and cannot change the value."); // Output: Answer explaining the differences
+console.log("What is scope?"); // Output: What is scope? (interview question)
+console.log("Answer: Scope is where a variable can be used: global, function, or block."); // Output: Answer explaining scope
 
 
 /*
@@ -121,18 +121,18 @@ Re-declare → Creating same variable again
 Re-assign → Changing the value
 */
 
-console.log("\n========== RE-DECLARE vs RE-ASSIGN ==========");
+console.log("\n========== RE-DECLARE vs RE-ASSIGN =========="); // Section header
 
 let test = 10;
 // let test = 20; ❌ Re-declare NOT allowed with let
 
 test = 20; // ✅ Re-assign ALLOWED
-console.log("test re-assigned:", test);
+console.log("test re-assigned:", test); // Output: test re-assigned: 20 (let allows re-assigning values)
 
 // Comparison:
 var oldTest = 10;
 var oldTest = 20; // ✅ allowed with var (confusing!)
-console.log("var re-declare:", oldTest);
+console.log("var re-declare:", oldTest); // Output: var re-declare: 20 (var allows re-declaring with same name - bad practice)
 
 
 /*
@@ -144,9 +144,9 @@ var → hoisted and initialized as undefined
 let/const → hoisted but NOT initialized (TDZ)
 */
 
-console.log("\n========== HOISTING ==========");
+console.log("\n========== HOISTING =========="); // Section header
 
-console.log("var hoisted:", v1); // undefined (not error!)
+console.log("var hoisted:", v1); // Output: var hoisted: undefined (var is hoisted and initialized to undefined before code runs)
 var v1 = 1;
 
 // console.log("let hoisted:", l1); ❌ ERROR - Cannot access 'l1' before initialization
@@ -162,7 +162,7 @@ const k1 = 3;
 ====================================================
 */
 
-console.log("\n========== DECISION GUIDE ==========");
+console.log("\n========== DECISION GUIDE =========="); // Section header
 
 // RULE 1: DEFAULT → use const (70% of the time)
 const appName = "MyApp";
@@ -181,7 +181,7 @@ for (let i = 0; i < 5; i++) {
 // RULE 3: Never use var (0% of the time)
 // var oldStyle = "avoid this";
 
-console.log("Final values - appName:", appName, "userScore:", userScore);
+console.log("Final values - appName:", appName, "userScore:", userScore); // Output: Final values - appName: MyApp userScore: 10 (shows const and let usage results)
 
 
 /*
@@ -190,7 +190,7 @@ console.log("Final values - appName:", appName, "userScore:", userScore);
 ====================================================
 */
 
-console.log("\n========== COMMON MISTAKES ==========");
+console.log("\n========== COMMON MISTAKES =========="); // Section header
 
 // ❌ MISTAKE 1: Using var in modern code
 // var mistake1 = "old way"; // Don't do this

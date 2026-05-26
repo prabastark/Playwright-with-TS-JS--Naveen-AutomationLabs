@@ -292,7 +292,104 @@ for (const value of animals.values()) {
 
 // Hint: values() is like forEach but with iterator syntax.
 
-// 4. Quick interview-ready summary
+// 4. Exceptional and complete array helper functions
+// This section adds the remaining built-in array tools so we cover everything.
+
+// 4.1 copyWithin() - copy part of an array inside itself
+// Definition: copyWithin(target, start, end) copies items from one part of the array to another.
+// Example:
+const copyExample = ["a", "b", "c", "d"];
+copyExample.copyWithin(0, 2, 4);
+console.log("copyWithin result:", copyExample); // Output: copyWithin result: ["c", "d", "c", "d"]
+// Explanation: values from index 2 and 3 were copied to the front.
+
+// 4.2 flatMap() - map and then flatten one level
+// Definition: flatMap(callback) runs map and then flattens the result by one level.
+// Example:
+const flatMapExample = [1, 2, 3].flatMap((num) => [num, num * 2]);
+console.log("flatMap result:", flatMapExample); // Output: flatMap result: [1, 2, 2, 4, 3, 6]
+// Explanation: each number became two values and the output became a single array.
+
+// 4.3 toLocaleString() - locale-aware string output
+// Definition: toLocaleString() converts the array to a string using local rules.
+// Example:
+const localeArray = [1234567.89, new Date("2026-01-01")];
+console.log("toLocaleString:", localeArray.toLocaleString());
+// Output example: toLocaleString: 1,234,567.89,1/1/2026
+// Explanation: the array becomes one string using local number and date format.
+
+// 4.4 toString() - simple string output
+// Definition: toString() converts the array to a simple comma-separated string.
+// Example:
+console.log("toString:", ["x", "y", "z"].toString()); // Output: toString: x,y,z
+// Explanation: each item is joined with commas.
+
+// 4.5 at() - get item by position with negative indexes
+// Definition: at(index) returns the item at the given index, with negative counting from the end.
+// Example:
+const lettersAt = ["a", "b", "c", "d"];
+console.log("At 1:", lettersAt.at(1)); // Output: At 1: b
+console.log("At -1:", lettersAt.at(-1)); // Output: At -1: d
+// Explanation: at(-1) gives the last item.
+
+// 4.6 findLast() - find the last matching item
+// Definition: findLast() returns the last value that passes the test.
+// Example:
+const foundLast = [1, 2, 3, 2].findLast((num) => num > 1);
+console.log("Find last:", foundLast); // Output: Find last: 2
+// Explanation: it found the last number greater than 1.
+
+// 4.7 findLastIndex() - find the position of the last match
+// Definition: findLastIndex() returns the index of the last item that passes the test.
+// Example:
+const foundLastIndex = [1, 2, 3, 2].findLastIndex((num) => num > 1);
+console.log("Find last index:", foundLastIndex); // Output: Find last index: 3
+// Explanation: index 3 is the last position with a number greater than 1.
+
+// 4.8 reduceRight() - reduce from right to left
+// Definition: reduceRight() works like reduce() but starts from the rightmost item.
+// Example:
+const reducedRight = [1, 2, 3].reduceRight((total, num) => total + num, 0);
+console.log("Reduce right:", reducedRight); // Output: Reduce right: 6
+// Explanation: the sum is the same as reduce(), but the order is right-to-left.
+
+// 4.9 Array.isArray() - check if a value is an array
+// Definition: Array.isArray(value) returns true if the value is an array.
+// Example:
+console.log("Is array?", Array.isArray([1, 2, 3])); // Output: Is array? true
+console.log("Is array?", Array.isArray("hello")); // Output: Is array? false
+// Explanation: useful for checking data before using array methods.
+
+// 4.10 Array.from() - make an array from something else
+// Definition: Array.from(iterable) creates an array from a string, set, map, or iterator.
+// Example:
+console.log("Array.from:", Array.from("abc")); // Output: Array.from: ["a", "b", "c"]
+// Explanation: Array.from turns a string into an array of letters.
+
+// 4.11 Array.of() - make an array from values
+// Definition: Array.of(...values) creates a new array from the listed values.
+// Example:
+console.log("Array.of:", Array.of(1, 2, 3)); // Output: Array.of: [1, 2, 3]
+// Explanation: Array.of creates an array from its arguments.
+
+// 4.12 [Symbol.iterator] - built-in iterator for for...of
+// Definition: arrays already support iteration using for...of because of Symbol.iterator.
+// Example:
+for (const item of ["a", "b", "c"]) {
+  console.log("for...of item:", item); // Output lines: for...of item: a, for...of item: b, for...of item: c
+}
+// Explanation: this is how arrays can be looped in modern JavaScript.
+
+// 4.13 lastIndexOf() - find the last position of an item
+// Definition: lastIndexOf(value) returns the last index where the value appears.
+// Example:
+const lastIndex = ["x", "y", "x"].lastIndexOf("x");
+console.log("Last index of x:", lastIndex); // Output: Last index of x: 2
+// Explanation: it finds the last matching position.
+
+// 4.14 copyWithin, flatMap, toLocaleString, toString, at, findLast, findLastIndex, reduceRight, Array.isArray, Array.from, Array.of, and Symbol.iterator are the full set of extra array helpers.
+
+// 5. Quick interview-ready summary
 // - Arrays store multiple values in one variable.
 // - Use [] to create arrays.
 // - Common tasks: add, remove, find, transform, and combine values.
